@@ -8,9 +8,14 @@ from .models import *
 class ClubAdmin (admin.ModelAdmin):
     list_display = ('id','club_name','coutry','rating')
 
-# @admin.register(Tournament_table)
-# class Tournament_tableAdmin(admin.ModelAdmin):
-#     list_display = ('position', 'club_name', 'game', 'goal_difference','point')
 @admin.register(Tour_one)
-class Tour_1Admin(admin.ModelAdmin):
+class Tour_oneAdmin(admin.ModelAdmin):
     list_display = ('home','goal_home','goal_away')
+
+@admin.register(Tournament_table)
+class Tournament_tableAdmin(admin.ModelAdmin):
+    list_display = ('position', 'game', 'goal_difference','point')
+
+@admin.register(Player)
+class PlayerAdmin(admin.ModelAdmin):
+    list_display = ('name', 'poz')

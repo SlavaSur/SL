@@ -1,5 +1,4 @@
 # created by virtualenv automatically
-# created by virtualenv automatically
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -124,7 +123,7 @@ venv.bak/
 
 # mkdocs documentation
 /site
-**/migrations/
+
 # mypy
 .mypy_cache/
 .dmypy.json
