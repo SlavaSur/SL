@@ -6,21 +6,20 @@ class Club (models.Model):
     coutry = models.CharField (max_length=3)
     rating = models.IntegerField ()
 
-    # def __str__(self):
-    #     return self.club_name
+    def __str__(self):
+        return self.club_name
 
-class Tour_one(models.Model):
-    home = models.ForeignKey ('Club', on_delete=models.CASCADE,)
+    class Meta:
+        ordering = ["id"]
+
+class Tour(models.Model):
+    home = models.CharField (max_length=50)
     goal_home = models.IntegerField()
-    #away = models.ForeignKey ('Club', on_delete=models.CASCADE,)
     goal_away = models.IntegerField()
+    away = models.CharField(max_length=50)
 
-class Tournament_table(Club):
-    position = models.AutoField(primary_key=True)
-    game = models.IntegerField(max_length=3)
-    goal_difference = models.IntegerField(max_length=3)
-    point = models.IntegerField(max_length=3)
-
-class Player (models.Model):
-    name = models.CharField (max_length=50)
-    poz = models.CharField (max_length=10)
+class Table (models.Model):
+    club_name = models.CharField(max_length=50)
+    played = models.IntegerField (default=0)
+    gd = models.IntegerField (default=0)
+    pts = models.IntegerField (default=0)
