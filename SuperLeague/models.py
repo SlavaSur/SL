@@ -1,7 +1,9 @@
+#from .views import game, tours
 from django.db import models
 
 # Create your models here.
-class Club (models.Model):
+
+class Club(models.Model):
     club_name = models.CharField (max_length=50)
     coutry = models.CharField (max_length=3)
     rating = models.IntegerField ()
@@ -13,9 +15,9 @@ class Club (models.Model):
         ordering = ["id"]
 
 class Tour(models.Model):
-    home = models.CharField (max_length=50)
-    goal_home = models.IntegerField()
-    goal_away = models.IntegerField()
+    home = models.CharField (max_length=50) #SuperLeague.views.tours(Club.club_name),
+    goal_home = models.IntegerField(default=0)
+    goal_away = models.IntegerField(default=0)
     away = models.CharField(max_length=50)
 
 class Table (models.Model):

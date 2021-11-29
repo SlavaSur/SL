@@ -1,0 +1,36 @@
+<<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Расписание матчей</title>
+</head>
+<body>
+    <h1>Расписание матчей</h1>
+    <table>
+      <colgroup>
+    <col span="2" style="background:#57c414"><!-- С помощью этой конструкции задаем цвет фона для первых трех столбцов таблицы-->
+    <col style="background-color:#2d87c7"><!-- Задаем цвет фона для следующего (одного) столбца таблицы-->
+  </colgroup>
+    <tr>
+        <th>Хозяева</th>
+        <th>Голы Хозяева</th>
+        <th>Голы Гости</th>
+        <th>Гости</th>
+    </tr>
+        {% for i in tour %}
+
+    <tr>
+        <td>  <h3>{{ i.home }} </h3> </td>
+        <td>  <h3>{{ i.goal_home }} </h3> </td>
+        <td>  <h3>{{ i.goal_away }} </h3> </td>
+        <td>  <h3>{{ i.away }} </h3> </td>
+
+
+    </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
