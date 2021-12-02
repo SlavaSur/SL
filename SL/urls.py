@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('SuperLeague.urls')),
     path('tours/', include('SuperLeague.urls')),
+    path('Turnament_table/', include('SuperLeague.urls')),
 ]

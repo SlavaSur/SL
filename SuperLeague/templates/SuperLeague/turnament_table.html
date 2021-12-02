@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Турнирная таблица</title>
+</head>
+<body>
+    <h1>Турнирная таблица</h1>
+    <table>
+      <colgroup>
+    <col span="2" style="background:#57c414">
+    <col span="2" style="background-color:#2d87c7">
+    <col span="1" style="background-color:#eedb12">
+  </colgroup>
+    <tr>
+        <th>N</th>
+        <th>Клуб</th>
+        <th>Игры</th>
+        <th>Разница мячей</th>
+        <th>Очки</th>
+    </tr>
+        {% for i in turn %}
+
+    <tr>
+        <td><h3> {{ i.id }}</h3></td>
+        <td>  <h3>{{ i.club_name }} </h3> </td>
+        <td>  <h3>{{ i.played }} </h3> </td>
+        <td>  <h3>{{ i.gd }} </h3> </td>
+        <td>  <h3>{{ i.pts }} </h3> </td>
+
+
+    </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

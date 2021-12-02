@@ -11,7 +11,11 @@ def tours (request):
     tour = Tour.objects.all()
     return render (request,'SuperLeague/tours.html', {'tour': tour})
 
-def tours(*args,**kwargs):
+def Turnament_table (request):
+    turn = Table.objects.all()
+    return render (request, 'SuperLeague/turnament_table.html', {'turn': turn})
+
+def tour(*args,**kwargs):
     cl = [*args]
     while cl != []:
       home = choice(cl)
